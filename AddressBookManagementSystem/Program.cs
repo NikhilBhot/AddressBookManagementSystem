@@ -15,7 +15,7 @@ namespace AddressBookManagementSystem
             bool end = true;
             while (true)
             {
-                Console.WriteLine("Select Option\n1.add Contact \n2.Display \n3.Edit Contact \n");
+                Console.WriteLine("Select Option\n1.add Contact \n2.Display \n3.Edit Contact \n4.Delete Contact");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -29,7 +29,11 @@ namespace AddressBookManagementSystem
 
                         AddressBookMain.EditContact();
                         break;
-                    
+
+                    case 4:
+                        AddressBookMain.Delete();
+                        break;
+
                     default:
                         Console.WriteLine("Incorrect Option");
                         break;
