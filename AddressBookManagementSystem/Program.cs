@@ -7,15 +7,34 @@ namespace AddressBookManagementSystem
         public static List<Contacts> Person = new List<Contacts>();
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to address Book System");
-            /*UC-01 Ability to create a Contacts in Address Book with first and last names, address,city, state, zip, 
-             phone number and email...
-             AddressBookMain addressBookMain = new AddressBookMain();
-             addressBookMain.CreateContacts();
-            */
+            Console.WriteLine("Welcome to AddressBook Program");
+
+            AddressBookManagementSystem.AddressBookMain.CreateContact();
 
 
-            AddressBookMain.CreateContact();
+            bool end = true;
+            while (true)
+            {
+                Console.WriteLine("Select Option\n1.add Contact \n2.Display \n3.Edit Contact \n");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        AddressBookMain.CreateContact();
+                        break;
+                    case 2:
+                        AddressBookMain.Dispaly();
+                        break;
+                    case 3:
+
+                        AddressBookMain.EditContact();
+                        break;
+                    
+                    default:
+                        Console.WriteLine("Incorrect Option");
+                        break;
+                }
+            }
         }
     }
 }
