@@ -8,8 +8,9 @@ namespace AddressBookManagementSystem
 {
     public class AddressBookMain
     {
-        Contacts contact = new Contacts();
-        public void CreatContact()
+        public static Contacts contact = new Contacts();
+        public static List<Contacts> Person = new List<Contacts>();
+        public  static  void CreateContact()
         {
             Console.WriteLine("Enter Your First Name : ");
             contact.fName = Console.ReadLine();
@@ -27,6 +28,9 @@ namespace AddressBookManagementSystem
             contact.phoneNumber = Convert.ToInt64(Console.ReadLine());
             Console.WriteLine("Enter Your Email : ");
             contact.email = Console.ReadLine();
+
+            Program.Person.Add(contact);
+
         }
     }
 }
